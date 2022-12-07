@@ -1,0 +1,571 @@
+-- phpMyAdmin SQL Dump
+-- version 5.3.0-dev+20221012.f1f31c313d
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 07-12-2022 a las 00:24:29
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `matricula`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asignatura`
+--
+
+CREATE TABLE `asignatura` (
+  `asi_id_asignatura` int(3) NOT NULL,
+  `asi_nombre` varchar(100) NOT NULL,
+  `asi_id_semestre` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `asignatura`
+--
+
+INSERT INTO `asignatura` (`asi_id_asignatura`, `asi_nombre`, `asi_id_semestre`) VALUES
+(3, 'Teorías y Modelos del Liderazgo', 1),
+(4, 'El Mundo Intrínseco y Extrínseco del Líder', 1),
+(5, 'Resolución de Problemas y Toma de Decisiones', 2),
+(6, 'Liderazgo y formación', 2),
+(7, 'Introducción al Coaching', 3),
+(8, 'Autoconocimiento, Cambio Personal y Aprendizaje', 3),
+(9, 'Liderazgo Gerencial', 4),
+(10, 'El Líder Coach y la Comunicación', 4),
+(11, 'Programación Neurolingüística', 5),
+(12, 'Casuística de Coaching', 5),
+(13, 'Relaciones Interpersonales', 6),
+(14, 'Paradigma Educativo y Educación del Futuro', 6),
+(15, 'Iniciación de las Neurociencias', 1),
+(16, 'El desarrollo del Cerebro a lo Largo del Ciclo Vital', 1),
+(17, 'Visión microscópica y Macroscópica del SNC', 2),
+(18, 'Sensación y Percepción', 2),
+(19, 'Acción y Movimiento', 3),
+(20, 'Memoria y Aprendizaje I', 3),
+(21, 'Memoria y Aprendizaje II', 4),
+(22, 'Lengua', 4),
+(23, 'Neurodiversidad', 5),
+(24, 'Cerebro Emocional y el Cerebro Social', 5),
+(25, 'Factores que Activan al Cerebro Para el Aprendizaje', 6),
+(26, 'Neuropedagogía: de la Teoría a la Práctica', 6),
+(27, 'Fundamentos de Finanzas', 1),
+(28, 'Legislación Aplicada a la Gestión Financiera', 1),
+(29, 'Contabilidad Para decisiones Financieras ', 2),
+(30, 'Riesgo Crediticio y Gestión de Cobranzas', 2),
+(31, 'Liquidez y Solidez Financiera', 3),
+(32, 'Inversión en el Mercado Financiero ', 3),
+(33, 'Finanzas Internacionales ', 4),
+(34, 'Planeamiento y Análisis Financiero', 5),
+(35, 'Aspectos Generales de Gestión y Administración de Empresas', 1),
+(36, 'Gestión Empresarial ', 1),
+(37, 'Los Estados Financieros', 2),
+(38, 'Investigación de Mercados ', 2),
+(39, 'Planeamiento Estratégico Para el Desarrollo Empresarial', 3),
+(40, 'Administración de Materiales', 3),
+(41, 'Toma de Decisiones y Organización', 4),
+(42, 'Introducción y Conceptos Básicos de Marketing', 4),
+(43, 'Fundamentos de la Logística', 5),
+(44, 'Introducción al Coaching', 5),
+(45, 'Fundamentos de la Gestión del Potencial Humano', 6),
+(46, 'Casuística y Casos Prácticos de la Gestión del Potencial Humano ', 6),
+(47, 'Fundamentos de la contabilidad', 1),
+(48, 'Contabilidad Gerencial I ', 1),
+(49, 'Contabilidad Gerencial II ', 2),
+(50, 'El Entorno Financiero', 2),
+(51, 'Contabilidad Gerencial III', 3),
+(52, 'Análisis e Interpretación de los Estados Financieros', 3),
+(53, 'Interrelación del Costo - Volumen - Utilidades', 4),
+(54, 'Costeo Variable', 4),
+(55, 'Costeo por Absorción', 5),
+(56, 'La Planificación Financiera y el control de la Gestión', 5),
+(57, 'Teoría del Valor: El EVA', 6),
+(58, 'Introducción a la Medicina Estética', 1),
+(59, 'Estética de Cara y Cuello', 1),
+(60, 'Dermatoestética', 2),
+(61, 'Implantes Y Rellenos Faciales', 3),
+(62, 'Peelings', 2),
+(63, 'Estética Corporal ', 3),
+(64, 'Estética Quirúrgica', 4),
+(65, 'Mesoterapia Estética', 4),
+(66, 'Flebología y Linfología Estética', 5),
+(67, 'Metodología De La Investigación Científica', 5),
+(68, 'Historia de la Medicina Legal o Forense', 1),
+(69, 'Tanatología Forense', 1),
+(70, 'Traumatología Forense ', 2),
+(71, 'Asfixiología Forense', 2),
+(72, 'Sexología Forense ', 3),
+(73, 'Embarazo No Deseado', 3),
+(74, 'Aborto', 4),
+(75, 'Homicidio del Recién Nacido ', 4),
+(76, 'Síndrome del Niño Maltratado', 5),
+(77, 'Psiquiatría Forense', 5),
+(78, 'Odontología Forense', 6),
+(79, 'Dispositivos Legales Vigentes en el Perú', 6),
+(80, 'Principios del Derecho Penal ', 1),
+(81, 'Aspectos Generales del Derecho Penal', 1),
+(82, 'La Teoría Jurídica del Delito', 2),
+(83, 'Auditoría y Participación', 2),
+(84, 'Delito de Crimen Organizado y Lavado de Activos', 3),
+(85, 'La Víctima y su rol en el proceso penal peruano', 3),
+(86, 'El Secreto de las Comunicaciones', 4),
+(87, 'Estudio de la Ley Orgánica del Poder Judicial', 4),
+(88, 'Métodos Científicos de Investigación en Planes de Seguridad y Pericias Criminalísticas ', 1),
+(89, 'Investigación, Inspección Ocular, Peritaje y Vigilancia ', 1),
+(90, 'Entrevistas, Interrogatorios, Fuentes de Información, Identificación de Delincuentes y Detenciones', 2),
+(91, 'Técnicas de Colección y Cuidado de la Evidencia', 2),
+(92, 'Descripción Básica de Delitos contra la Fe Pública y la Propiedad, Prostitución y Drogas', 3),
+(93, 'Delitos contra la Propiedad y las Personas', 3),
+(94, 'Delitos contra la Fe Pública, la Salud y la Honestidad', 4),
+(95, 'Criminalística y Lugar de Hecho', 4),
+(96, 'Fraudes con Cheques, Tarjetas de Crédito y Dinero', 5),
+(97, 'Dactiloscopia', 5),
+(98, 'Balística Forense y Absorción Atómica', 6),
+(99, 'Introducción a la Grafología y Grafotecnia', 6),
+(100, 'Fundamentos de la Gestión del Potencial Humano', 1),
+(101, 'Gestión Estratégica de Potencial Humano', 1),
+(102, 'Gestión de Potencial Humano por Competencia', 2),
+(103, 'Habilidades Gerenciales I', 2),
+(104, 'Análisis, Descripción y Valorización de Puestos de Trabajo', 3),
+(105, 'Habilidades Gerenciales II', 3),
+(106, 'Gestión de Retribuciones y Remuneraciones', 4),
+(107, 'Reclutamiento, Selección e Integración del Personal', 4),
+(108, 'Habilidades Gerenciales III', 5),
+(109, 'Gestión y Evaluación del Desempeño', 5),
+(110, 'Gestión de la Formación, Capacitación y Desarrollo del Personal', 5),
+(111, 'Habilidades Gerenciales IV', 6),
+(112, 'Casuística y Casos Prácticos de la Gestión del Potencial Humano', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrera`
+--
+
+CREATE TABLE `carrera` (
+  `car_id_carrera` int(3) NOT NULL,
+  `car_nombre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `carrera`
+--
+
+INSERT INTO `carrera` (`car_id_carrera`, `car_nombre`) VALUES
+(4, 'LIDERAZGO EDUCATIVO'),
+(5, 'NEUROPEDAGOGÍA'),
+(6, 'FINANZAS'),
+(7, 'ADMINISTRACION DE EMPRESAS'),
+(8, 'CONTABILIDAD GENERAL'),
+(9, 'MEDICINA ESTETICA'),
+(10, 'MEDICINA FORENSE'),
+(11, 'DERECHO PENAL'),
+(12, 'CRIMINALÍSTICA'),
+(13, 'ADMINISTRACION EN SEGURIDAD INTEGRAL');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrera_asignatura`
+--
+
+CREATE TABLE `carrera_asignatura` (
+  `ca_id` int(3) NOT NULL,
+  `ca_id_carrera` int(3) NOT NULL,
+  `ca_id_asignatura` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `carrera_asignatura`
+--
+
+INSERT INTO `carrera_asignatura` (`ca_id`, `ca_id_carrera`, `ca_id_asignatura`) VALUES
+(3, 4, 3),
+(4, 4, 4),
+(5, 4, 5),
+(6, 4, 6),
+(7, 4, 7),
+(8, 4, 8),
+(9, 4, 9),
+(10, 4, 10),
+(11, 4, 11),
+(12, 4, 12),
+(13, 4, 13),
+(14, 4, 14),
+(15, 5, 15),
+(16, 4, 16),
+(17, 5, 17),
+(18, 5, 18),
+(19, 5, 19),
+(20, 5, 20),
+(21, 5, 21),
+(22, 5, 22),
+(23, 5, 23),
+(24, 5, 24),
+(25, 5, 25),
+(26, 5, 26),
+(27, 6, 27),
+(28, 6, 28),
+(29, 6, 29),
+(30, 6, 30),
+(31, 6, 31),
+(32, 6, 32),
+(33, 6, 33),
+(34, 6, 34),
+(35, 7, 35),
+(36, 7, 36),
+(37, 7, 37),
+(38, 7, 38),
+(39, 7, 39),
+(40, 7, 40),
+(41, 7, 41),
+(42, 7, 42),
+(43, 7, 43),
+(44, 7, 44),
+(45, 7, 45),
+(46, 7, 46),
+(47, 8, 47),
+(48, 8, 48),
+(49, 8, 49),
+(50, 8, 50),
+(51, 8, 51),
+(52, 8, 52),
+(53, 8, 53),
+(54, 8, 54),
+(55, 8, 55),
+(56, 8, 56),
+(57, 8, 57),
+(58, 9, 58),
+(59, 9, 59),
+(60, 9, 60),
+(61, 9, 61),
+(62, 9, 62),
+(63, 9, 63),
+(64, 9, 64),
+(65, 9, 65),
+(66, 9, 66),
+(67, 9, 67),
+(68, 10, 68),
+(69, 10, 69),
+(70, 10, 70),
+(71, 10, 71),
+(72, 10, 72),
+(73, 10, 73),
+(74, 10, 74),
+(75, 10, 75),
+(76, 10, 76),
+(77, 10, 77),
+(78, 10, 78),
+(79, 10, 79),
+(80, 11, 80),
+(81, 11, 81),
+(82, 11, 82),
+(83, 11, 83),
+(84, 11, 84),
+(85, 11, 85),
+(86, 11, 86),
+(87, 11, 87),
+(88, 12, 88),
+(89, 12, 89),
+(90, 12, 90),
+(91, 12, 91),
+(92, 12, 92),
+(93, 12, 93),
+(94, 12, 94),
+(95, 12, 95),
+(96, 12, 96),
+(97, 12, 97),
+(98, 12, 98),
+(99, 12, 99),
+(100, 13, 100),
+(101, 13, 101),
+(102, 13, 102),
+(103, 13, 103),
+(104, 13, 104),
+(105, 13, 105),
+(106, 13, 106),
+(107, 13, 107),
+(108, 13, 108),
+(109, 13, 109),
+(110, 13, 110),
+(111, 13, 111),
+(112, 13, 112);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `estudiante`
+--
+
+CREATE TABLE `estudiante` (
+  `est_cedula` char(10) NOT NULL,
+  `est_nombres` varchar(100) NOT NULL,
+  `est_apellidos` varchar(100) NOT NULL,
+  `est_edad` int(3) NOT NULL,
+  `est_direccion` varchar(100) DEFAULT NULL,
+  `est_estado_civil` varchar(15) DEFAULT NULL,
+  `est_genero` char(1) DEFAULT NULL,
+  `est_telefono` varchar(15) DEFAULT NULL,
+  `est_correo` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `estudiante`
+--
+
+INSERT INTO `estudiante` (`est_cedula`, `est_nombres`, `est_apellidos`, `est_edad`, `est_direccion`, `est_estado_civil`, `est_genero`, `est_telefono`, `est_correo`) VALUES
+('07823900', 'Jose Alberto', 'Rodriguez Martinez', 20, 'Los Olivos', 'Soltero', 'M', '923482021', 'joseks@gmail.com'),
+('70993450', 'Carlos Ricardo', 'Aquino Vila', 22, 'Mz C2 Lt7 Ex Zona Comercial', 'Soltero', 'M', '923288546', 'ca285543@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `login`
+--
+
+CREATE TABLE `login` (
+  `log_usuario` varchar(50) NOT NULL,
+  `log_contraseña` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `login`
+--
+
+INSERT INTO `login` (`log_usuario`, `log_contraseña`) VALUES
+('Admin', '827ccb0eea8a706c4c34a16891f84e7b');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `matricula`
+--
+
+CREATE TABLE `matricula` (
+  `mat_id` int(3) NOT NULL,
+  `mat_id_estudiante` char(10) NOT NULL,
+  `mat_id_periodo` int(3) NOT NULL,
+  `mat_id_semestre` int(3) NOT NULL,
+  `mat_id_carrera` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `matricula_asignatura`
+--
+
+CREATE TABLE `matricula_asignatura` (
+  `mm_id` int(3) NOT NULL,
+  `mm_id_matricula` int(3) NOT NULL,
+  `mm_id_asignatura` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `periodo_ac`
+--
+
+CREATE TABLE `periodo_ac` (
+  `per_id_periodo` int(3) NOT NULL,
+  `per_f_in` date NOT NULL DEFAULT current_timestamp(),
+  `per_f_fin` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `periodo_ac`
+--
+
+INSERT INTO `periodo_ac` (`per_id_periodo`, `per_f_in`, `per_f_fin`) VALUES
+(3, '2022-12-01', '2022-12-31'),
+(5, '2023-01-01', '2023-01-31'),
+(6, '2023-02-01', '2023-02-28'),
+(7, '2023-03-01', '2023-03-31');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `semestre`
+--
+
+CREATE TABLE `semestre` (
+  `sem_id_semestre` int(3) NOT NULL,
+  `sem_nombre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `semestre`
+--
+
+INSERT INTO `semestre` (`sem_id_semestre`, `sem_nombre`) VALUES
+(1, 'Primer'),
+(2, 'Segundo'),
+(3, 'Tercer'),
+(4, 'Cuarto'),
+(5, 'Quinto'),
+(6, 'Sexto');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `asignatura`
+--
+ALTER TABLE `asignatura`
+  ADD PRIMARY KEY (`asi_id_asignatura`),
+  ADD KEY `asi_id_semestre` (`asi_id_semestre`);
+
+--
+-- Indices de la tabla `carrera`
+--
+ALTER TABLE `carrera`
+  ADD PRIMARY KEY (`car_id_carrera`);
+
+--
+-- Indices de la tabla `carrera_asignatura`
+--
+ALTER TABLE `carrera_asignatura`
+  ADD PRIMARY KEY (`ca_id`),
+  ADD KEY `ca_id_asignatura` (`ca_id_asignatura`),
+  ADD KEY `ca_id_carrera` (`ca_id_carrera`);
+
+--
+-- Indices de la tabla `estudiante`
+--
+ALTER TABLE `estudiante`
+  ADD PRIMARY KEY (`est_cedula`);
+
+--
+-- Indices de la tabla `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`log_usuario`);
+
+--
+-- Indices de la tabla `matricula`
+--
+ALTER TABLE `matricula`
+  ADD PRIMARY KEY (`mat_id`,`mat_id_estudiante`),
+  ADD KEY `mat_id_estudiante` (`mat_id_estudiante`),
+  ADD KEY `mat_id_periodo` (`mat_id_periodo`),
+  ADD KEY `mat_id_semestre` (`mat_id_semestre`),
+  ADD KEY `mat_id_carrera` (`mat_id_carrera`);
+
+--
+-- Indices de la tabla `matricula_asignatura`
+--
+ALTER TABLE `matricula_asignatura`
+  ADD PRIMARY KEY (`mm_id`),
+  ADD KEY `mm_id_asignatura` (`mm_id_asignatura`),
+  ADD KEY `mm_id_matricula` (`mm_id_matricula`);
+
+--
+-- Indices de la tabla `periodo_ac`
+--
+ALTER TABLE `periodo_ac`
+  ADD PRIMARY KEY (`per_id_periodo`);
+
+--
+-- Indices de la tabla `semestre`
+--
+ALTER TABLE `semestre`
+  ADD PRIMARY KEY (`sem_id_semestre`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `asignatura`
+--
+ALTER TABLE `asignatura`
+  MODIFY `asi_id_asignatura` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+
+--
+-- AUTO_INCREMENT de la tabla `carrera`
+--
+ALTER TABLE `carrera`
+  MODIFY `car_id_carrera` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT de la tabla `carrera_asignatura`
+--
+ALTER TABLE `carrera_asignatura`
+  MODIFY `ca_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+
+--
+-- AUTO_INCREMENT de la tabla `matricula`
+--
+ALTER TABLE `matricula`
+  MODIFY `mat_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `matricula_asignatura`
+--
+ALTER TABLE `matricula_asignatura`
+  MODIFY `mm_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `periodo_ac`
+--
+ALTER TABLE `periodo_ac`
+  MODIFY `per_id_periodo` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `semestre`
+--
+ALTER TABLE `semestre`
+  MODIFY `sem_id_semestre` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `asignatura`
+--
+ALTER TABLE `asignatura`
+  ADD CONSTRAINT `asignatura_ibfk_1` FOREIGN KEY (`asi_id_semestre`) REFERENCES `semestre` (`sem_id_semestre`);
+
+--
+-- Filtros para la tabla `carrera_asignatura`
+--
+ALTER TABLE `carrera_asignatura`
+  ADD CONSTRAINT `carrera_asignatura_ibfk_1` FOREIGN KEY (`ca_id_asignatura`) REFERENCES `asignatura` (`asi_id_asignatura`),
+  ADD CONSTRAINT `carrera_asignatura_ibfk_2` FOREIGN KEY (`ca_id_carrera`) REFERENCES `carrera` (`car_id_carrera`);
+
+--
+-- Filtros para la tabla `matricula`
+--
+ALTER TABLE `matricula`
+  ADD CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`mat_id_estudiante`) REFERENCES `estudiante` (`est_cedula`),
+  ADD CONSTRAINT `matricula_ibfk_2` FOREIGN KEY (`mat_id_periodo`) REFERENCES `periodo_ac` (`per_id_periodo`),
+  ADD CONSTRAINT `matricula_ibfk_3` FOREIGN KEY (`mat_id_semestre`) REFERENCES `semestre` (`sem_id_semestre`),
+  ADD CONSTRAINT `matricula_ibfk_4` FOREIGN KEY (`mat_id_carrera`) REFERENCES `carrera` (`car_id_carrera`);
+
+--
+-- Filtros para la tabla `matricula_asignatura`
+--
+ALTER TABLE `matricula_asignatura`
+  ADD CONSTRAINT `matricula_asignatura_ibfk_1` FOREIGN KEY (`mm_id_asignatura`) REFERENCES `asignatura` (`asi_id_asignatura`),
+  ADD CONSTRAINT `matricula_asignatura_ibfk_2` FOREIGN KEY (`mm_id_matricula`) REFERENCES `matricula` (`mat_id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
